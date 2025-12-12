@@ -29,5 +29,6 @@ jobs:
           echo "GitHub release/tag: $GITHUB_REF_NAME"
           docker build . \
             --file Dockerfile_prod \
-            --tag ghcr.io/${{ github.repository }}/npdb:${GITHUB_REF_NAME}
+            --tag ghcr.io/${{ github.repository }}/npdb:${GITHUB_REF_NAME} \
+            --tag ghcr.io/${{ github.repository }}/npdb:latest \            
           docker push ghcr.io/${{ github.repository }}/npdb:${GITHUB_REF_NAME}
