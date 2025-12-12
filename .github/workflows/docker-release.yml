@@ -31,5 +31,5 @@ jobs:
           file: Dockerfile_prod
           push: true
           tags: |
-             ghcr.io/${{ github.repository }}/npdb:${GITHUB_REF_NAME}
-             ghcr.io/${{ github.repository }}/npdb:latest
+             ghcr.io/${{ github.repository }}/${{ github.event.repository.name }}:${GITHUB_REF_NAME}
+             ghcr.io/${{ github.repository }}/${{ github.event.repository.name }}:latest
