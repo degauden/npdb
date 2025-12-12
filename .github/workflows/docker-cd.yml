@@ -29,4 +29,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}:dev
+          tags: ghcr.io/${{ github.repository }}/npdb:dev

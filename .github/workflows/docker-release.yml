@@ -26,9 +26,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          REPO_LOWER=$(echo "${GITHUB_REPOSITORY_OWNER}" | tr '[:upper:]' '[:lower:]')
           echo "GitHub release/tag: $GITHUB_REF_NAME"
           docker build . \
             --file Dockerfile_prod \
-            --tag ghcr.io/${REPO_LOWER}/npdb:${GITHUB_REF_NAME}
-          docker push ghcr.io/${REPO_LOWER}/npdb:${GITHUB_REF_NAME}
+            --tag ghcr.io/${{ github.repository }}/npdb:${GITHUB_REF_NAME}
+          docker push ghcr.io/${{ github.repository }}/npdb:${GITHUB_REF_NAME}
